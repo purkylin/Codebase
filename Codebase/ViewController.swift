@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     private let reuseIdentifier = "cell"
     
-    private var items = [(String, UIViewController)]()
+    private var items = [(String, UIViewController.Type)]()
     
     lazy var tableView: UITableView = {
         let v = UITableView()
@@ -39,8 +39,8 @@ class ViewController: UIViewController {
     
     func loadData() {
         self.items = [
-            ("First", FirstViewController()),
-            ("Collection", CollectionViewController())
+            ("Timer", TimerViewController.self),
+            ("Collection", CollectionViewController.self)
         ]
     }
     
@@ -65,7 +65,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let vc = items[indexPath.row].1
+        let vc = items[indexPath.row].1.init()
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }

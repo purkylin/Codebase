@@ -20,7 +20,7 @@
 		315C0AC8249CB2D900F2A644 /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315C0AC7249CB2D900F2A644 /* Secret.swift */; };
 		315C0ACA249CB35100F2A644 /* UIView+Modifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315C0AC9249CB35100F2A644 /* UIView+Modifier.swift */; };
 		315C0ACC249CB40400F2A644 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315C0ACB249CB40400F2A644 /* Util.swift */; };
-		315C0ACF249CB70400F2A644 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315C0ACE249CB70400F2A644 /* FirstViewController.swift */; };
+		315C0ACF249CB70400F2A644 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315C0ACE249CB70400F2A644 /* TimerViewController.swift */; };
 		315C0AD2249CC3A900F2A644 /* KingGridLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315C0AD1249CC3A900F2A644 /* KingGridLayout.swift */; };
 		315C0AD4249CC53600F2A644 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315C0AD3249CC53600F2A644 /* CollectionViewController.swift */; };
 		315C0AD6249CC83300F2A644 /* CellReuseIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315C0AD5249CC83300F2A644 /* CellReuseIdentifier.swift */; };
@@ -56,7 +56,7 @@
 		315C0AC7249CB2D900F2A644 /* Secret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
 		315C0AC9249CB35100F2A644 /* UIView+Modifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Modifier.swift"; sourceTree = "<group>"; };
 		315C0ACB249CB40400F2A644 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
-		315C0ACE249CB70400F2A644 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		315C0ACE249CB70400F2A644 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		315C0AD1249CC3A900F2A644 /* KingGridLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KingGridLayout.swift; sourceTree = "<group>"; };
 		315C0AD3249CC53600F2A644 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		315C0AD5249CC83300F2A644 /* CellReuseIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellReuseIdentifier.swift; sourceTree = "<group>"; };
@@ -153,7 +153,7 @@
 		315C0ACD249CB6D900F2A644 /* ChildControllers */ = {
 			isa = PBXGroup;
 			children = (
-				315C0ACE249CB70400F2A644 /* FirstViewController.swift */,
+				315C0ACE249CB70400F2A644 /* TimerViewController.swift */,
 			);
 			path = ChildControllers;
 			sourceTree = "<group>";
@@ -194,7 +194,8 @@
 				315C0AAF249C9E9200F2A644 /* Sources */,
 				315C0AB0249C9E9200F2A644 /* Frameworks */,
 				315C0AB1249C9E9200F2A644 /* Resources */,
-				316E0F6F249DAD9300A6F93A /* ShellScript */,
+				316E0F6F249DAD9300A6F93A /* Carthage */,
+				316E0F72249DEC7400A6F93A /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -265,7 +266,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		316E0F6F249DAD9300A6F93A /* ShellScript */ = {
+		316E0F6F249DAD9300A6F93A /* Carthage */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -275,6 +276,7 @@
 			);
 			inputPaths = (
 			);
+			name = Carthage;
 			outputFileListPaths = (
 				"$(SRCROOT)/output.xcfilelist",
 			);
@@ -283,6 +285,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks\n\n";
+		};
+		316E0F72249DEC7400A6F93A /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -298,7 +318,7 @@
 				315C0AC6249CB1E400F2A644 /* URL+Util.swift in Sources */,
 				315C0AD6249CC83300F2A644 /* CellReuseIdentifier.swift in Sources */,
 				315C0ACA249CB35100F2A644 /* UIView+Modifier.swift in Sources */,
-				315C0ACF249CB70400F2A644 /* FirstViewController.swift in Sources */,
+				315C0ACF249CB70400F2A644 /* TimerViewController.swift in Sources */,
 				315C0AC4249CAFBB00F2A644 /* UIColor+Util.swift in Sources */,
 				315C0AA0249C9DBA00F2A644 /* ViewController.swift in Sources */,
 				315C0A9E249C9DBA00F2A644 /* AppDelegate.swift in Sources */,
