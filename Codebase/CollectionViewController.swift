@@ -17,7 +17,7 @@ class CollectionViewController: UIViewController {
     lazy var collectionView: UICollectionView = {
         let layout = KingGridLayout(widthDimension: .absolute(constant: 60), heightDimension: .fractionalWidth(ratio: 1.0))
         let v = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        v.contentInsetAdjustmentBehavior = .never
+        v.contentInsetAdjustmentBehavior = .automatic
         v.register(CustomCell.self, forCellWithReuseIdentifier: CustomCell.reuseIdentifier)
         v.dataSource = self
         v.delegate = self
@@ -53,14 +53,16 @@ class CollectionViewController: UIViewController {
         switch type {
         case .grid:
             let layout = KingGridLayout(widthDimension: .absolute(constant: 60), heightDimension: .fractionalWidth(ratio: 1.0))
+            collectionView.contentInsetAdjustmentBehavior = .automatic
             collectionView.setCollectionViewLayout(layout, animated: true)
         case .pageGrid:
             let layout = PageGridLayout()
             layout.columns = 4
-            layout.rows = 4
+            layout.rows = 6
+            collectionView.contentInsetAdjustmentBehavior = .never
             collectionView.setCollectionViewLayout(layout, animated: true)
-            
-            break
+//        @unknown default:
+//            print("Please create new layout here")
         }
     }
 }
