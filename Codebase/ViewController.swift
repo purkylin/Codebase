@@ -32,12 +32,20 @@ class ViewController: UIViewController {
         
         loadData()
         tableView.reloadData()
+        
+        let item = UIBarButtonItem(title: "test", style: .plain, target: self, action: #selector(btnItemClicked))
+        self.navigationItem.rightBarButtonItem = item
     }
     
     func loadData() {
         self.items = [
-            ("First", FirstViewController())
+            ("First", FirstViewController()),
+            ("Collection", CollectionViewController())
         ]
+    }
+    
+    @objc func btnItemClicked() {
+        print("clicked")
     }
 }
 

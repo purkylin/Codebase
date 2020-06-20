@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -21,6 +21,11 @@
 		315C0ACA249CB35100F2A644 /* UIView+Modifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315C0AC9249CB35100F2A644 /* UIView+Modifier.swift */; };
 		315C0ACC249CB40400F2A644 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315C0ACB249CB40400F2A644 /* Util.swift */; };
 		315C0ACF249CB70400F2A644 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315C0ACE249CB70400F2A644 /* FirstViewController.swift */; };
+		315C0AD2249CC3A900F2A644 /* KingGridLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315C0AD1249CC3A900F2A644 /* KingGridLayout.swift */; };
+		315C0AD4249CC53600F2A644 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315C0AD3249CC53600F2A644 /* CollectionViewController.swift */; };
+		315C0AD6249CC83300F2A644 /* CellReuseIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315C0AD5249CC83300F2A644 /* CellReuseIdentifier.swift */; };
+		3164C484249CCC41004B03F3 /* PageGridLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3164C483249CCC41004B03F3 /* PageGridLayout.swift */; };
+		316E0F71249DB7C100A6F93A /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316E0F70249DB7C100A6F93A /* Theme.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +57,11 @@
 		315C0AC9249CB35100F2A644 /* UIView+Modifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Modifier.swift"; sourceTree = "<group>"; };
 		315C0ACB249CB40400F2A644 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		315C0ACE249CB70400F2A644 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		315C0AD1249CC3A900F2A644 /* KingGridLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KingGridLayout.swift; sourceTree = "<group>"; };
+		315C0AD3249CC53600F2A644 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		315C0AD5249CC83300F2A644 /* CellReuseIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellReuseIdentifier.swift; sourceTree = "<group>"; };
+		3164C483249CCC41004B03F3 /* PageGridLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageGridLayout.swift; sourceTree = "<group>"; };
+		316E0F70249DB7C100A6F93A /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +105,9 @@
 			children = (
 				315C0A9D249C9DBA00F2A644 /* AppDelegate.swift */,
 				315C0A9F249C9DBA00F2A644 /* ViewController.swift */,
+				315C0AD3249CC53600F2A644 /* CollectionViewController.swift */,
+				316E0F70249DB7C100A6F93A /* Theme.swift */,
+				315C0AD0249CC37800F2A644 /* Layout */,
 				315C0ACD249CB6D900F2A644 /* ChildControllers */,
 				315C0ABE249CAF4A00F2A644 /* Utils */,
 				315C0ABD249CAF3A00F2A644 /* Extensions */,
@@ -122,6 +135,7 @@
 				315C0AC3249CAFBB00F2A644 /* UIColor+Util.swift */,
 				315C0AC5249CB1E400F2A644 /* URL+Util.swift */,
 				315C0AC9249CB35100F2A644 /* UIView+Modifier.swift */,
+				315C0AD5249CC83300F2A644 /* CellReuseIdentifier.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -142,6 +156,15 @@
 				315C0ACE249CB70400F2A644 /* FirstViewController.swift */,
 			);
 			path = ChildControllers;
+			sourceTree = "<group>";
+		};
+		315C0AD0249CC37800F2A644 /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				315C0AD1249CC3A900F2A644 /* KingGridLayout.swift */,
+				3164C483249CCC41004B03F3 /* PageGridLayout.swift */,
+			);
+			path = Layout;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,6 +194,7 @@
 				315C0AAF249C9E9200F2A644 /* Sources */,
 				315C0AB0249C9E9200F2A644 /* Frameworks */,
 				315C0AB1249C9E9200F2A644 /* Resources */,
+				316E0F6F249DAD9300A6F93A /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -240,20 +264,47 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		316E0F6F249DAD9300A6F93A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"$(SRCROOT)/input.xcfilelist",
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+				"$(SRCROOT)/output.xcfilelist",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		315C0A96249C9DBA00F2A644 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				315C0AD4249CC53600F2A644 /* CollectionViewController.swift in Sources */,
 				315C0AC2249CAF8F00F2A644 /* String+Util.swift in Sources */,
 				315C0ACC249CB40400F2A644 /* Util.swift in Sources */,
 				315C0AC8249CB2D900F2A644 /* Secret.swift in Sources */,
 				315C0AC6249CB1E400F2A644 /* URL+Util.swift in Sources */,
+				315C0AD6249CC83300F2A644 /* CellReuseIdentifier.swift in Sources */,
 				315C0ACA249CB35100F2A644 /* UIView+Modifier.swift in Sources */,
 				315C0ACF249CB70400F2A644 /* FirstViewController.swift in Sources */,
 				315C0AC4249CAFBB00F2A644 /* UIColor+Util.swift in Sources */,
 				315C0AA0249C9DBA00F2A644 /* ViewController.swift in Sources */,
 				315C0A9E249C9DBA00F2A644 /* AppDelegate.swift in Sources */,
+				315C0AD2249CC3A900F2A644 /* KingGridLayout.swift in Sources */,
+				316E0F71249DB7C100A6F93A /* Theme.swift in Sources */,
+				3164C484249CCC41004B03F3 /* PageGridLayout.swift in Sources */,
 				315C0AC0249CAF5D00F2A644 /* Regex.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

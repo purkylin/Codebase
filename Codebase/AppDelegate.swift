@@ -23,6 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         print("after")
         
+        setupApperance()
+        
         return true
     }
 
@@ -48,7 +50,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
+    func setupApperance() {
+        Theme.current.apply()
+    }
 }
 
 extension UIApplication {
