@@ -16,6 +16,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        print("before")
+        application.executeWhenFileSystemIsAccessible {
+            print("file sytem is ok")
+        }
+        print("after")
+        
         return true
     }
 
@@ -42,5 +49,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 
+}
+
+extension UIApplication {
+    func executeWhenFileSystemIsAccessible(_ block: @escaping () -> Void) {
+        if isProtectedDataAvailable  {
+            block()
+        } else {
+            var token: Any? = nil
+            token = NotificationCenter.default.addObserver(forName: UIApplication.protectedDataDidBecomeAvailableNotification, object: nil, queue: nil) { _ in
+                block()
+                NotificationCenter.default.removeObserver(token!)
+            }
+        }
+    }
 }
 
