@@ -17,13 +17,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        print("before")
+        slog.info("before")
         application.executeWhenFileSystemIsAccessible {
-            print("file sytem is ok")
+            slog.info("file sytem is ok")
         }
-        print("after")
+        slog.info("after")
         
         setupApperance()
+        
+        FPSWindow.show()
         
         return true
     }
